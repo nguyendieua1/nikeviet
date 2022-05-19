@@ -17,9 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('layouts/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -81,6 +80,7 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+
+    <script src="{{ asset('layouts/js/bootstrap.bundle.min.js') }}" defer></script>
 </body>
 </html>

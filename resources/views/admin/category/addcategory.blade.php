@@ -1,54 +1,37 @@
 @extends('layouts.admin')
-
 @section('content')
-    <div class="card">
-        <div class="card-header">
-            <h5>Add Category</h5>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{ url('insert-category') }}" enctype="multipart/form-data">
-              @csrf
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="" for="">Name</label>
-                        <input type="text" class="form-control bg-gray-200" name="name">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="" for="">Slug</label>
-                        <input type="text" class="form-control bg-gray-200" name="slug">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="" for="">Desciption</label>
-                        <textarea name="desciption" rows="3" class="form-control bg-gray-200" ></textarea>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="" for="">Status</label>
-                        <input type="checkbox" name="status">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="" for="">Popular</label>
-                        <input type="checkbox" name="popular">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="" for="">Meta Title</label>
-                        <input type="text" class="form-control bg-gray-200" name="meta_title">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="" for="">Meta Keywords</label>
-                        <input type="text" class="form-control bg-gray-200" name="meta_keywords">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="" for="">Meta Desciption</label>
-                        <input type="text" class="form-control bg-gray-200" name="meta_descipt">
-                    </div>
-                    <div class="col-md-12">
-                        <input type="file" name="image" class="form-control bg-gray-200">
-                    </div>
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms /</span>Add Category</h4>
+        <form action="{{ url('insert-category') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name"
+                                       name="name"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Slug</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="slug"
+                                       name="slug"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Image</label>
+                                <input class="form-control" type="file" id="formFile" name="img">
+                            </div>
+                            <div class="form-check mb-3">
+                                <input name="status" class="form-check-input" type="checkbox" id="defaultRadio2">
+                                <label class="form-check-label" for="defaultRadio2"> Status </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 @endsection
